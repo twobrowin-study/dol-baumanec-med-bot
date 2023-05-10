@@ -11,6 +11,8 @@ WORKDIR /python-docker
 COPY requirenments.txt .
 RUN pip3 install -r requirenments.txt
 
+RUN  mkdir ./ext/
+COPY python/ext/*.py ./ext/
 COPY python/*.py ./
 
 CMD [ "python3", "-u", "main.py"]

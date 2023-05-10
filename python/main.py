@@ -1,6 +1,6 @@
 import sys
 
-from spreadsheetbot import SpreadSheetBot, Log, DEBUG
+from ext.spreadsheetbot import SpreadSheetBot, Log, DEBUG
 
 from settings import (
     BotToken,

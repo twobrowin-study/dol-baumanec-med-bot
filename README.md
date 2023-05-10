@@ -1,6 +1,4 @@
-# Универсальный бот - библиотека и человек
-
-[Пример таблицы - только на чтение](https://docs.google.com/spreadsheets/d/1dkpFEvOqWvVM_cJAnKvaQ0Ne8MmGPjy33cvPeeSwi-o/edit?usp=sharing)
+# Расширение бота Google таблиц для поддержки функциональности мед осмотра
 
 ## Функциональное наполнение доступно в описании основной библиотеки [Spread Sheet Bot](https://github.com/twobrowin-study/spreadsheetbot-lib)
 
