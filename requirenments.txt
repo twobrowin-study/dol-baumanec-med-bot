@@ -1,1 +1,1 @@
-spreadsheetbot==2.0.2
+spreadsheetbot==2.1.0

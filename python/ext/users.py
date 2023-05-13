@@ -173,11 +173,9 @@ async def proceed_registration_handler(self, update: Update, context: ContextTyp
 
     count = self.active_user_count()
     if last_main_state and self.should_send_report(count):
-        context.application.create_task(
-            Groups.send_to_all_admin_groups(
-                context.bot,
-                Report.currently_active_users_template.format(count=count),
-                ParseMode.MARKDOWN
-            )
+        Groups.send_to_all_admin_groups(
+            context.bot,
+            Report.currently_active_users_template.format(count=count),
+            ParseMode.MARKDOWN
         )
 UsersAdapterClass.proceed_registration_handler = proceed_registration_handler
