@@ -8,6 +8,8 @@ from spreadsheetbot.sheets.settings import Settings
 
 from spreadsheetbot import Log
 
+from datetime import datetime
+
 class DoctorsUsersAdapterClass(AbstractSheetAdapter):
     def __init__(self) -> None:
         super().__init__('doctors_users', 'doctors_users', initialize_as_df=True)
@@ -39,7 +41,11 @@ class DoctorsUsersAdapterClass(AbstractSheetAdapter):
             await asyncio.sleep(self.retry_sleep_time)
         self.mutex.append(f"{user_chat_id}\\{doctor_id}")
 
-        record_params = {'user_chat_id': user_chat_id, 'doctor_id': doctor_id}
+        record_params = {
+            'datetime': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            'user_chat_id': user_chat_id,
+            'doctor_id': doctor_id
+        }
         tmp_df = pd.DataFrame(record_params, columns=self.as_df.columns, index=[0]).fillna('')
         if self.as_df.empty:
             self.as_df = tmp_df
