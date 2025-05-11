@@ -1,0 +1,26 @@
+container:
+  image: twobrowin/dol-baumanec-med-bot:1.1.2
+  imagePullPolicy: IfNotPresent
+
+  env:
+  - name: TZ
+    value: Europe/Moscow
+  - name: BOT_TOKEN
+    valueFrom:
+      secretKeyRef:
+        name: dol-baumanec-med-bot-2025
+        key: bot_token
+  - name: SHEETS_ACC_JSON
+    valueFrom:
+      secretKeyRef:
+        name: dol-baumanec-med-bot-2025
+        key: sheet_acc_json
+  - name: SHEETS_LINK
+    valueFrom:
+      secretKeyRef:
+        name: dol-baumanec-med-bot-2025
+        key: sheets_link
+  - name: SWITCH_UPDATE_TIME
+    value: '15'
+  - name: SETTINGS_UPDATE_TIME
+    value: '35'

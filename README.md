@@ -8,19 +8,17 @@
 
 Для запуска в режиме отладки могут использоваться флаги `debug`, `--debug`, `-D`.
 
-## Сборка и запуск Docker контейнера
+## Сборка Docker контейнера
 
 `docker build -t twobrowin/spreadsheet-bot:latest .`
 
 `docker push twobrowin/spreadsheet-bot:latest`
 
-`ansible-playbook playbook.yaml -i hosts.ini`
+## Запуск в Kubernetes
 
-Требуются дополнительные файлы:
+`helm upgrade --install --debug -n baumanec dol-baumanec-med-bot-2025 ./charts`
 
-* `hosts.ini` - описание подключение к хосту для развёртывания бота
-
-* `secrets.yaml` - переменные `bot_token`, `sheet_acc_json`, `sheets_link`
+Требуются создать секрет `dol-baumanec-med-bot-2025` в неймспейсе `baumanec`
 
 ## Переменные окружения для запуска приложения
 
